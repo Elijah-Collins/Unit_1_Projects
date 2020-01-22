@@ -1,11 +1,12 @@
+"use strict";
 /*
    New Perspectives on HTML5 and CSS3, 7th Edition
    Tutorial 9
    Case Problem 3
 
    Random Jane Austen Quote Generator
-   Author: 
-   Date:   
+   Author: Elijah Collins
+   Date:   1/22/20
    
    This script randomly generates a Jane Austen quote from
    a list of 10 quotes and writes that quote into the first
@@ -13,6 +14,18 @@
 
 */
 
+randomInt(0,9);
+
+function randomInt(lowest, size){
+   var randy = Math.floor(Math.random()*size+lowest);
+   return randy;
+}
+var randomQ = randomInt(0,9);
+
+var quoteElem = document.getElementsByTagName("quote")[0];
+
+getQuote(randomQ);
+quoteElem.innerHTML = getQuote(randomQ);
 
 function getQuote(n) {
    var quotes = [
